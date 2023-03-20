@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="850.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMarket.UsersAdminViewController">
+   <children>
+      <Pane layoutX="-60.0" layoutY="-315.0" prefHeight="347.0" prefWidth="524.0" rotate="40.0" style="-fx-background-color: #E45652; -fx-background-radius: 70;" />
+      <Pane layoutY="124.0" prefHeight="50.0" prefWidth="218.0" style="-fx-background-color: #E45652; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="71.0" layoutY="9.0" text="Users" textAlignment="CENTER" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnBack" layoutY="14.0" minWidth="38.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="20.0" prefWidth="38.0" style="-fx-background-color: #20120F;">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ImagesAndLogos/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="tableUsers" layoutX="259.0" layoutY="185.0" prefHeight="356.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="columnFirstName" prefWidth="100.0" text="First Name" />
+            <TableColumn fx:id="columnLastName" prefWidth="100.0" text="Last Name" />
+            <TableColumn fx:id="columnUsername" prefWidth="100.0" text="Username" />
+            <TableColumn fx:id="columnEmail" prefWidth="130.0" text="E-mail" />
+            <TableColumn fx:id="columnNumOfOrdersOfUser" prefWidth="73.0" text="User Orders" />
+            <TableColumn fx:id="columnWalletBalanceOfUser" minWidth="0.0" text="E-Wallet" />
+         </columns>
+      </TableView>
+      <Pane layoutY="182.0" prefHeight="362.0" prefWidth="246.0" style="-fx-background-color: #D1805F; -fx-background-radius: 20;">
+         <children>
+            <TableView fx:id="tableSelectedUserOrders" layoutX="6.0" layoutY="94.0" prefHeight="245.0" prefWidth="232.0">
+              <columns>
+                <TableColumn fx:id="columnUserOrderID" prefWidth="62.399993896484375" text="Order_id" />
+                <TableColumn fx:id="columnOrderPrice" prefWidth="86.39999389648438" text="Price" />
+                <TableColumn fx:id="columnOrderDate" text="Date" />
+              </columns>
+            </TableView>
+            <GridPane alignment="CENTER" layoutX="13.0" layoutY="9.0" prefHeight="79.0" prefWidth="225.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.20001220703125" minWidth="10.0" prefWidth="71.4000244140625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.5999755859375" minWidth="10.0" prefWidth="153.5999755859375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="68.0" text="Username:" textFill="#f8f4f4">
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSelectedUsername" prefHeight="38.0" prefWidth="154.0" text="Get Username" textFill="#f8f4f4" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="68.0" text="Email:" textFill="#f8f4f4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSelectedEmail" prefHeight="36.0" prefWidth="154.0" text="Get Email" textFill="#f8f4f4" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="SansSerif Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutX="425.0" layoutY="94.0" prefHeight="79.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="165.0" layoutY="40.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white; -fx-stroke: #E45652; -fx-stroke-width: 2;" />
+            <Label layoutX="14.0" layoutY="15.0" text="Total Users">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="141.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ImagesAndLogos/user2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTotUsersInSystem" layoutX="14.0" layoutY="32.0" prefHeight="17.0" prefWidth="66.0" text="clear and set fxid" textFill="#e45652">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <Pane layoutX="639.0" layoutY="94.0" prefHeight="79.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="165.0" layoutY="40.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white; -fx-stroke: #E45652; -fx-stroke-width: 2;" />
+            <Label layoutX="14.0" layoutY="15.0" text="Total Orders">
+               <font>
+                  <Font name="SansSerif Regular" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="141.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ImagesAndLogos/total_orders.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTotOrdersInSystem" layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="66.0" text="clear and set fxid" textFill="#e45652">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

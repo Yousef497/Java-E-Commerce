@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="850.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMarket.ProductsAdminController">
+   <children>
+      <Pane layoutX="-60.0" layoutY="-315.0" prefHeight="347.0" prefWidth="524.0" rotate="40.0" style="-fx-background-color: #E45652; -fx-background-radius: 70;" />
+      <Pane layoutY="123.0" prefHeight="50.0" prefWidth="218.0" style="-fx-background-color: #E45652; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="57.0" layoutY="9.0" text="Products" textAlignment="CENTER" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnBack" layoutY="7.0" minWidth="39.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="32.0" prefWidth="39.0" style="-fx-background-color: #20120F;">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ImagesAndLogos/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutY="183.0" prefHeight="362.0" prefWidth="294.0" style="-fx-background-color: #D1805F; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="16.0" layoutY="19.0" text="Product" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldProdName" layoutX="91.0" layoutY="16.0" prefHeight="26.0" prefWidth="179.0" promptText="Enter New Category Name">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="58.0" prefHeight="20.0" prefWidth="74.0" text="Category" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboCategory" layoutX="91.0" layoutY="55.0" prefHeight="20.0" prefWidth="179.0" visibleRowCount="2" />
+            <HBox alignment="CENTER" layoutX="46.0" layoutY="206.0" prefHeight="32.0" prefWidth="232.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnAddProdToSystem" mnemonicParsing="false" onAction="#btnAddProd" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 8;" text="Add" textAlignment="CENTER">
+                     <font>
+                        <Font name="SansSerif Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnEditProdInSystem" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnEditProd" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 8;" text="Edit">
+                     <font>
+                        <Font name="SansSerif Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDeleteProdFromSystem" layoutX="64.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnDeleteProd" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 8;" text="Delete">
+                     <font>
+                        <Font name="SansSerif Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <Label layoutX="14.0" layoutY="160.0" prefHeight="20.0" prefWidth="60.0" text="Status" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboStatus" layoutX="89.0" layoutY="156.0" prefHeight="20.0" prefWidth="179.0" visibleRowCount="2" />
+            <Label layoutX="14.0" layoutY="92.0" text="Price" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldProdPrice" layoutX="89.0" layoutY="89.0" prefHeight="26.0" prefWidth="179.0" promptText="Enter Product Price">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="124.0" text="Quantity" textFill="#f8f4f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldQtyToBeAdded" layoutX="89.0" layoutY="121.0" prefHeight="26.0" prefWidth="179.0" promptText="Enter Quantity to be Added">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <TableView fx:id="tableProducts" layoutX="304.0" layoutY="183.0" prefHeight="362.0" prefWidth="536.0">
+         <columns>
+            <TableColumn fx:id="columnProdID" prefWidth="74.4000244140625" text="id" />
+            <TableColumn fx:id="columnProdName" prefWidth="113.0" text="Product" />
+            <TableColumn fx:id="columnProdCategory" prefWidth="113.0" text="Category" />
+            <TableColumn fx:id="columnProdQty" text="Qty" />
+            <TableColumn fx:id="columnProdPrice" prefWidth="76.0" text="Price" />
+            <TableColumn fx:id="columnProdStatus" minWidth="0.0" prefWidth="75.2000732421875" text="Status" />
+         </columns>
+      </TableView>
+      <Pane layoutX="622.0" layoutY="95.0" prefHeight="79.0" prefWidth="218.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="179.0" layoutY="40.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white; -fx-stroke: #E45652; -fx-stroke-width: 2;" />
+            <Label layoutX="14.0" layoutY="15.0" text="Total Products">
+               <font>
+                  <Font name="SansSerif Regular" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="155.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ImagesAndLogos/products.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTotSystemProd" layoutX="14.0" layoutY="36.0" prefHeight="25.0" prefWidth="117.0" text="clear and set fxid" textFill="#e45652">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
